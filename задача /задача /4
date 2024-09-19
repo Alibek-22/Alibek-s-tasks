@@ -1,0 +1,9 @@
+a=input().split()
+max=0
+for i in range (0,len(a)):
+    if(a.count(a[i])>max):
+        max = a.count(x[i])
+for i in range (0,len(a)):
+     if(max=a.count(x[i])):
+        print(a[i])
+        break
