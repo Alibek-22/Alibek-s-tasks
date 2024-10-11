@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def parabola(x):
+    return x ** 2 + 5 
+
+
+x = np.linspace(-5, 5, 100)
+
+y = parabola(x)
+
+plt.plot(x, y)
+
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.title('График параболы')
+
+plt.show()
