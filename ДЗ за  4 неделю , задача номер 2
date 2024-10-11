@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+
+labels = ['ФПМИ', 'ФОПФ', 'ФЭФМ', 'ФРТК', 'ФАКТ']
+sizes = [50, 35, 15, 25, 10]
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+
+plt.title('Количество абитуриентов за год')
+plt.axis('equal')  
+
+plt.show()
