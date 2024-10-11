@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+universities = ['MIPT', 'MSU', 'MIT', 'Oxford university', 'Cambridge university']
+students = [1000, 900, 800, 700, 850]
+
+plt.bar(universities, students)
+
+plt.title('Количество  поступающих студентов за 2 года')
+plt.xlabel('Университет')
+plt.ylabel('Количество поступающих студентов')
+plt.xticks(rotation=45) 
+
+plt.show()
