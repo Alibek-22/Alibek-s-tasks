@@ -1,0 +1,49 @@
+class Human:
+    def __init__(self, name, time):
+        self.name = name
+        self.time = time
+class TheFirstPeople(Human):
+    def __init__(self, name, time, type):
+        super().__init__(name, time)
+        self.type = type
+        self.Dryopithecus = '18 million years old'
+        self.ramapithecus = '14 million years old'
+        self.Australopithecus = '1.5-5.5 million years old'
+        self.Homoerectus = '600-400 thousand years'
+        self.Neanderthals = '600-40 thousand years ago'
+        self.homosapiens = '40-35 thousand years'
+    def info(self):
+        print(f'Класс предмета: {self.name}, Тип: Первые люди')
+    def extra_info(self):
+        if self.type == 'Дриопитеки':
+            print(f'Подтип: Дриопитеки, Места проживания: на деревьях, Особенности: не создавали орудия труда, но пользовались палками и камнями, Время жизни: T = {self.Dryopithecus}\n')
+        elif self.type == "Рамапитеки":
+            print(f'Подтип: Рамапитеки, Места проживания: на земле, Особенности: сравнительно малые схожести с человеком, Время жизни T = {self.ramapithecus}\n')
+        elif self.type == "Австралопитеки":
+            print(f'Подтип: Австралопитеки, Места проживания: преимущественно на земле и рядом с океаном, Особенности: изготавливали орудия труда, Время жизни T = {self.Australopithecus}\n')
+        elif self.type == "Человек умелый":
+            print(f'Подтип: Человек умелый, Места проживания: преимущественно на земле, Особенности: охотились на животных с каменным оружием, создали лук, Время жизни T = {self.Homoerectus}\n')
+        elif self.type == "Неандертальцы":
+            print(f'Подтип: Неандертальцы, Места проживания: на земле, Особенности: использовали огонь, Время жизни T = {self.Neanderthals}\n')
+        elif self.type == "Современный человек":
+            print(f'Подтип: Современный человек, Места проживания: созданы помещения для жилья, Особенности: работа с металлами и письменность, Время жизни T = {self.homosapiens}\n')
+
+hum = TheFirstPeople('Первые люди', 'First', 'Дриопитеки')
+rare = TheFirstPeople('Первые люди', 'Second', 'Рамапитеки')
+pdf = TheFirstPeople('Первые люди', 'Third', 'Австралопитеки')
+gg = TheFirstPeople('Первые люди', '4th', 'Дриопитеки')
+edd = TheFirstPeople('Первые люди', '5th', 'Рамапитеки')
+www = TheFirstPeople('Первые люди', '6th', 'Австралопитеки')
+
+hum.info()
+hum.extra_info()
+rare.info()
+rare.extra_info()
+pdf.info()
+pdf.extra_info()
+gg.info()
+gg.extra_info()
+edd.info()
+edd.extra_info()
+www.info()
+www.extra_info()
