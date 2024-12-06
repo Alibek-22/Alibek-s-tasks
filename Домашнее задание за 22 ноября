@@ -1,0 +1,68 @@
+import functools
+
+class Human:
+    def __init__(self, name, time):
+        self._name = name  
+        self._time = time
+
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, value):
+        if not isinstance(value, str):
+            raise TypeError("unknown")
+        self._name = value
+
+    @property
+    def time(self):
+        return self._time
+    
+    @time.setter
+    def time(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Time must be a string")
+        self._time = value
+
+
+class TheFirstPeople(Human):
+    def __init__(self, name, time, type):
+        super().__init__(name, time)
+        self._type = type 
+        self.Dryopithecus = '18 million years old'
+        self.ramapithecus = '14 million years old'
+        self.Australopithecus = '1.5-5.5 million years old'
+        self.Homoerectus = '600-400 thousand years'
+        self.Neanderthals = '600-40 thousand years ago'
+        self.homosapiens = '40-35 thousand years'
+
+
+    @property
+    def type(self):
+        return self._type
+
+    @type.setter
+    def type(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Type must be a string")
+        self._type = value
+
+
+    def info(self):
+        print(f'Класс предмета: {self.name}, Тип: Первые люди')
+
+
+    def extra_info(self):
+        if self._type == 'Дриопитеки':
+            print(f'Подтип: Дриопитеки, Места проживания: на деревьях, Особенности: не создавали орудия труда, но пользовались палками и камнями, Время жизни: T = {self.Dryopithecus}\n')
+        elif self._type == "Рамапитеки":
+            print(f'Подтип: Рамапитеки, Места проживания: на земле, Особенности: сравнительно малые схожести с человеком, Время жизни T = {self.ramapithecus}\n')
+        elif self._type == "Австралопитеки":
+            print(f'Подтип: Австралопитеки, Места проживания: преимущественно на земле и рядом с океаном, Особенности: изготавливали орудия труда, Время жизни T = {self.Australopithecus}\n')
+        elif self._type == "Человек умелый":
+            print(f'Подтип: Человек умелый, Места проживания: преимущественно на земле, Особенности: охотились на животных с каменным оружием, создали лук, Время жизни T = {self.Homoerectus}\n')
+        elif self._type == "Неандертальцы":
+            print(f'Подтип: Неандертальцы, Места проживания: на земле, Особенности: использовали огонь, Время жизни T = {self.Neanderthals}\n')
+        elif self._type == "Современный человек":
+            print(f'Подтип: Современный человек, Места проживания: созданы помещения для жилья, Особенности: работа с металлами и письменность, Время жизни T = {self.homosapiens}\n')
