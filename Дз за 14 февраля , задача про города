@@ -1,0 +1,50 @@
+from collections import defaultdict, Counter
+
+def can_rearrange_cities(cities):
+    if not cities:
+        return True
+
+    in_degree = Counter()
+    out_degree = Counter()
+    adj = defaultdict(list)  # Для проверки связности 
+    letters = set()
+        
+        for city in cities:
+        first = city[0]
+        last = city[-1]
+        out_degree[first] += 1
+        in_degree[last] += 1
+        adj[first].append(last)
+        adj[last].append(first)  
+        letters.add(first)
+        letters.add(last)
+
+   
+    start_node = next(iter(letters))  у
+    stack = [start_node]
+    visited = set(stack)
+
+    while stack:
+        node = stack.pop()
+        for neighbor in adj[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                stack.append(neighbor)
+    if visited != letters:
+        return False
+    start_nodes = 0
+    end_nodes = 0
+
+    for letter in letters:
+        diff = out_degree[letter] - in_degree[letter]
+        if abs(diff) > 1:
+            return False
+        if diff == 1:
+            start_nodes += 1
+        elif diff == -1:
+            end_nodes += 1
+
+
+
+cities = input().split()
+print(can_rearrange_cities(cities))
